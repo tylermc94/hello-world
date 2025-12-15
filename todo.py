@@ -9,9 +9,10 @@ def show_menu():
     print("1. View tasks")
     print("2. Add task")
     print("3. Remove task")
-    print("4. Save list")
-    print("5. Load list")
-    print("6. Quit")
+    print("4. Toggle completed")
+    print("5. Save list")
+    print("6. Load list")
+    print("7. Quit")
 
 def view_tasks(tasks):
     """Show all current tasks"""
@@ -20,13 +21,31 @@ def view_tasks(tasks):
     else:
         print("\nYour tasks:")
         for i, task in enumerate(tasks, 1):
-            print(f"{i}. {task}")
+            if task["Done"] == True:
+                checkbox = "[X]"
+            else:
+                checkbox = "[ ]"
+            print(f"{i}. {checkbox} {task["task"]}")
 
 def add_task(tasks):
     """Add a new task to the list"""
     task = input("\nWhat task do you want to add? ")
-    tasks.append(task)
+    tasks.append({"task": task, "Done": False})
     print(f"Added: {task}")
+
+def toggle_task(tasks):
+    """Mark a task as complete"""
+    view_tasks(tasks)
+    if len(tasks) > 0:
+        try:
+            task_num = int(input("\nWhich task number should be toggled? "))
+            if 1 <= task_num <= len(tasks):
+                tasks[task_num - 1]["Done"] = not tasks[task_num - 1]["Done"]
+                print(f"Completed", tasks[task_num - 1]["task"])
+            else:
+                print("Invalid task number!")
+        except ValueError:
+            print("Please enter a number!")
 
 def remove_task(tasks):
     """Remove a task from the list"""
@@ -69,7 +88,7 @@ def main():
     
     while True:
         show_menu()
-        choice = input("\nChoose an option (1-6): ")
+        choice = input("\nChoose an option (1-7): ")
         
         if choice == "1":
             view_tasks(tasks)
@@ -78,14 +97,16 @@ def main():
         elif choice == "3":
             remove_task(tasks)
         elif choice == "4":
-            save_list(tasks)
+            toggle_task(tasks)
         elif choice == "5":
-            load_list(tasks)
+            save_list(tasks)
         elif choice == "6":
+            load_list(tasks)
+        elif choice == "7":
             print("Goodbye!")
             break
         else:
-            print("Invalid choice! Please choose 1-4.")
+            print("Invalid choice! Please choose 1-7.")
 
 # This runs the program
 if __name__ == "__main__":

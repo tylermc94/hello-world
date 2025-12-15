@@ -1,1 +1,1 @@
-["Test", "Test 3"]
+[{"task": "Test", "Done": true}, {"task": "Test 2", "Done": false}]
