@@ -34,7 +34,7 @@ def add_task(tasks):
     print(f"Added: {task}")
 
 def toggle_task(tasks):
-    """Mark a task as complete"""
+    """Mark a task as complete or incomplete"""
     view_tasks(tasks)
     if len(tasks) > 0:
         try:
