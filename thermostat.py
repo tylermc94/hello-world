@@ -1,4 +1,4 @@
-from machine import Pin, ADC, PWM
+from machine import Pin, ADC, PWM # type: ignore
 import time
 
 #-----Variables-----
