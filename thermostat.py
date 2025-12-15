@@ -24,3 +24,22 @@ for _ in range(10):
 
     print(f"Current Temp: {current_temp}, Heater: {heater_state}")
     time.sleep(0.1)
+
+    # In a real scenario, you would read the temperature from a sensor
+    # adc = ADC(Pin(34))  # Example pin for temperature sensor
+    # current_temp = adc.read()  # Read temperature value
+    # Convert ADC value to temperature if necessary
+
+
+    # Control heater using PWM
+    # pwm = PWM(Pin(15))  # Example pin for heater control
+    # if heater_state == "on":
+    #     pwm.duty(512)  # Set duty cycle to 50%
+    # else:
+    #     pwm.duty(0)    # Turn off heater
+    # Clean up PWM
+    # pwm.deinit()
+    # Note: The above PWM code is commented out as it requires actual hardware to run.
+
+    # For demonstration purposes, we simulate a delay
+    time.sleep(1)
