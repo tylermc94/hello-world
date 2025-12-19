@@ -1,0 +1,3 @@
+config.py
+*.pyc
+top_domains.json
