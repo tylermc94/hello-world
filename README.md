@@ -11,3 +11,6 @@ A basic dimmer program to run on the Raspberry Pi Pico, mostly vibe coded. It ju
 
 ## thermostat.py
 This was my thought for a good beginner project before I moved to the to-do list. I think I'll still come back to this, it feels like a good way to integrate my Python skills with my microcontroller skills by making a simple thermostat/heat controller with a Pi Pico.
+
+## Pihole-API-top-domains.py
+Learning how to use APIs in Python. This pulls the Pihole address and API key from a config file and runs two API GET calls, first to authenticate, then to get the list of top domains visited on my network. It automatically pulls the authentication keys from the auth call response and feeds them to the domain list call, then it formats the top domains list into a decent looking table.
