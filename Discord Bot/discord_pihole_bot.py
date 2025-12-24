@@ -90,7 +90,7 @@ async def on_ready():
     
 
 @client.event
-async def on_message(message):
+async def on_message(message): # Listen for messages and respond accordingly
     if message.author == client.user:
         return
 
