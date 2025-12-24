@@ -14,3 +14,6 @@ This was my thought for a good beginner project before I moved to the to-do list
 
 ## Pihole-API-top-domains.py
 Learning how to use APIs in Python. This pulls the Pihole address and API key from a config file and runs two API GET calls, first to authenticate, then to get the list of top domains visited on my network. It automatically pulls the authentication keys from the auth call response and feeds them to the domain list call, then it formats the top domains list into a decent looking table.
+
+## discord_pihole_bot.py
+Expanding API use and getting into working with a discord bot for a future project. This just adapts the features of the pihole-commands program to run as a discord bot
